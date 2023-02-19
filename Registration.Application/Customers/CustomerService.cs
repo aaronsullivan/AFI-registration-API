@@ -5,8 +5,8 @@ namespace Registration.Application.Customers;
 
 public class CustomerService : ICustomerService
 {
-    readonly IRepository<Customer> _customerRepository;
-    readonly IUnitOfWork _unitOfWork;
+    private readonly IRepository<Customer> _customerRepository;
+    private readonly IUnitOfWork _unitOfWork;
 
     public CustomerService(
         IRepository<Customer> customerRepository,
