@@ -194,6 +194,8 @@ public class Tests
         });
     }
 
+
+
     [Test]
     public void GivenValid18YearOld_Then_ShouldPassValidation()
     {
@@ -224,7 +226,7 @@ public class Tests
             var customer = await Customer.Register(
                 "Bob",
                 "Smith",
-                "AB-123456789",
+                "AB-123456",
                 null,
                 email);
 
@@ -245,5 +247,19 @@ public class Tests
                 await registerCustomer();
             });
         }
+    }
+
+    [Test]
+    public void GivenAValidCustomer_Then_CustomerShouldBeRegistered()
+    {
+        Assert.DoesNotThrowAsync(async () =>
+        {
+            var customer = await Customer.Register(
+                "Aaron",
+                "Sullivan",
+                "AA-123456",
+                new DateTime(1990, 07, 12),
+                "aaron@sullivan.co.uk");
+        });
     }
 }

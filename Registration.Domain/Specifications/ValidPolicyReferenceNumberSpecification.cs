@@ -7,7 +7,7 @@ public class ValidPolicyReferenceNumberSpecification : ISpecification<string>
 {
     public bool IsSatisfied(string policyReferenceNumber)
     {
-        var matches = Regex.Match(policyReferenceNumber, @"^[A-Z]{2}[-][\d]{6}")?.Success ?? false;
+        var matches = Regex.Match(policyReferenceNumber, @"^[A-Z]{2}[-][\d]{6}$")?.Success ?? false;
 
         return matches;
     }
